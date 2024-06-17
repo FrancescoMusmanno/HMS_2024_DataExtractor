@@ -35,6 +35,7 @@ def write_to_csv(results: dict, output_file: str):
         rows.append(row_key)
         columns.append(col_key)
         values.append(value)
+
     df = pd.DataFrame({'Row': rows, 'Column': columns, 'Value': values})
     pivot_df = df.pivot(index='Row', columns='Column', values='Value')
     pivot_df.to_csv(output_file)

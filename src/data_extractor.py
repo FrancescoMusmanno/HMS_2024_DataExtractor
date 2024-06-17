@@ -8,7 +8,7 @@ def extract_data(data_file: str, combinations: list[tuple[Any, Any]]) -> Any:
 
     results = {}
     for combination in combinations:
-        result = data['Times'][combination[0]][str(combination[1])][str(int(combination[0] + 1))][str(combination[2])][
+        result = data['Times'][combination[0] - 1][str(combination[1])][str(int(combination[0]))][str(combination[2])][
             str(combination[3])]
         results[combination] = result
     return results
